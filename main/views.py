@@ -179,12 +179,5 @@ def get_given_properties(request):
         print(pred, output_name)
         dict_get[translation[output_name]] = pred.round(2)
 
-    class Request:
-        GET = request.GET
-
-    if internal(Request, raw=True)["Werkzeugstandzeit"] < 0:
-        return render(request, "page2.html", {"error": "true"})
-
-
     return render(request, "page3.html", dict_get)
 
