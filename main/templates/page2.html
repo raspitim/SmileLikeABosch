@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Produktkonfiguration - Like a BOSCH</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <strong>Produktkonfiguration</strong> - #LikeA<strong>BOSCH</strong>
+            </a>
+        </div>
+    </nav>
+
+
+    <div class="accordion" id="accordion">
+        <h1>Lenkstangenkonfigurator</h1>
+        <p>In unserem innovatioven Produktkonfigurator können Sie aufgrund gegebener Anforderungen die perfekte Produktkonfiguration errechnen -  und direkt eine Anfrage an unser Sales Team schicken.</p>
+        <disclaimer>Es muss für mindestens die Hälfte der Eigenschaften ein Sollwert angegeben werden, welche physikalisch nicht im Widerspruch stehen dürfen.</disclaimer>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Vertriebsdaten
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="inputcontainer">
+                        <strong>Preis:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="price" id="priceinlineRadio1" value="calc" onclick="set_price('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="price" id="priceinlineRadio2" value="min" onclick="set_price('min')">
+                            <label class="form-check-label" for="inlineRadio2">Minimieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="price" id="priceinlineRadio4" value="value" onclick="set_price(document.querySelector('#price').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="price" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_price(document.querySelector('#price').value)"> €/Stk.</label></label>
+                        </div>
+                    </div>
+                    <div class="inputcontainer">
+                        <strong>Lieferzeit:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="delivery" id="deliveryinlineRadio1" value="calc" onclick="set_delivery('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="delivery" id="deliveryinlineRadio2" value="min" onclick="set_delivery('min')">
+                            <label class="form-check-label" for="inlineRadio2">Minimieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="delivery" id="deliveryinlineRadio4" value="value" onclick="set_delivery(document.querySelector('#delivery').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="delivery" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_delivery(document.querySelector('#delivery').value)"></label> Monate</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Entwicklungsdaten
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="inputcontainer">
+                        <strong>Komponentenlänge:</strong>
+                        <label>Sollwert:<input id="length" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_length(document.querySelector('#length').value)"> mm</label>
+                    </div>
+                    <div class="inputcontainer">
+                        <strong>Komponentendurchmesser:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="diameter" id="diameterinlineRadio2" value="min" onclick="set_diameter('calc')">
+                            <label class="form-check-label" for="inlineRadio2">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="diameter" id="diameterinlineRadio4" value="value" onclick="set_diameter(document.querySelector('#diameter').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="diameter" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_diameter(document.querySelector('#diameter').value)"> mm</label></label>
+                        </div>                    </div>
+                    <div class="inputcontainer">
+                        <strong>Komponentenmasse:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="weight" id="weightinlineRadio1" value="calc" onclick="set_weight('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="weight" id="weightinlineRadio2" value="min" onclick="set_weight('min')">
+                            <label class="form-check-label" for="inlineRadio2">Minimieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="weight" id="weightinlineRadio4" value="value" onclick="set_weight(document.querySelector('#weight').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="weight" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_weight(document.querySelector('#weight').value)"> kg</label></label>
+                        </div>
+                    </div>
+                    <div class="inputcontainer">
+                        <strong>Biegungsspannung:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bow" id="bowinlineRadio1" value="calc" onclick="set_bow('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bow" id="bowinlineRadio2" value="min" onclick="set_bow('min')">
+                            <label class="form-check-label" for="inlineRadio2">Minimieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="bow" id="bowinlineRadio4" value="value" onclick="set_bow(document.querySelector('#bow').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="bow" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_bow(document.querySelector('#bow').value)"> N/mm<sup>2</sup></label></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Fertigungsdaten
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+               <div class="accordion-body">
+                    <div class="inputcontainer">
+                        <strong>Bauteilhärte:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="hardness" id="hardnessinlineRadio1" value="calc" onclick="set_hardness('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="hardness" id="hardnessinlineRadio2" value="min" onclick="set_hardness('min')">
+                            <label class="form-check-label" for="inlineRadio2">Minimieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="hardness" id="hardnessinlineRadio3" value="min" onclick="set_hardness('max')">
+                            <label class="form-check-label" for="inlineRadio3">Maximieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="hardness" id="hardnessinlineRadio4" value="value" onclick="set_hardness(document.querySelector('#hardness').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="hardness" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_hardness(document.querySelector('#hardness').value)"> HRC</label></label>
+                        </div>
+                    </div>
+                    <div class="inputcontainer">
+                        <strong>Fügekraft:</strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="join" id="joininlineRadio1" value="calc" onclick="set_join('calc')">
+                            <label class="form-check-label" for="inlineRadio1">Errechnen</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="join" id="joininlineRadio2" value="min" onclick="set_join('max')">
+                            <label class="form-check-label" for="inlineRadio2">Maximieren</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input style="margin-top: 11px;" class="form-check-input" type="radio" name="join" id="joininlineRadio4" value="value" onclick="set_join(document.querySelector('#join').value)">
+                        <label class="form-check-label" for="inlineRadio3"><label>Sollwert:<input id="join" style="width: 70px;margin: 0; margin-left:5px; display: inline-block;" class="form-control" onchange="set_join(document.querySelector('#join').value)"> N</label></label>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+
+    <button type="button" class="btn btn-primary" id="continue" onclick="submit()">Weiter</button>
+
+    </div>
+
+    <script>
+    var price = undefined
+    var delivery = undefined
+    var length = undefined
+    var diameter = undefined
+    var weight = undefined
+    var bow = undefined
+    var hardness = undefined
+    var join = undefined
+
+    if ({{error}}) {alert("Bosch hat keine Kapazität für Ihre Anforderungen. Hinweis: Eventuell müssen sie sie Lieferzeit anpassen.")}
+
+
+    function set_price(val) {
+        price = val;
+    }
+
+    function set_delivery(val) {
+        delivery = val;
+    }
+
+    function set_length(val) {
+        length = val;
+    }
+
+    function set_diameter(val) {
+        diameter = val;
+    }
+
+    function set_weight(val) {
+        weight = val;
+    }
+
+    function set_bow(val) {
+        bow = val;
+    }
+
+    function set_hardness(val) {
+        hardness = val;
+    }
+
+    function set_join(val) {
+        join = val;
+    }
+
+    function submit() {
+        window.location.href = `/give_values?price=${price}&delivery=${delivery}&length=${length}&diameter=${diameter}&weight=${weight}&bow=${bow}&hardness=${hardness}&join=${join}`;
+    }
+
+
+    </script>
+
+<style>
+
+#accordion {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+}
+
+.inputcontainer {
+    margin: 5px;
+}
+
+#continue {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+disclaimer {
+    color: gray;
+    font-size: small;
+    margin-bottom: 20px;
+}
+
+</style>
+
+
+</body>
+</html>

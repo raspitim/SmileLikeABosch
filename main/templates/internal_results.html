@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Konsistente interne Datenverwaltung - Like a BOSCH</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <strong>Konsistente interne Datenverwaltung</strong> - #LikeA<strong>BOSCH</strong>
+            </a>
+        </div>
+    </nav>
+
+    <div id="container">
+
+    <h2>Gegebene Properties:</h2>
+    <table class="table">
+    <tr>
+    <th>Preis</th>
+    <th>Lieferzeit</th>
+    <th>Komponentenlänge</th>
+    <th>Komponentendurchmesser</th>
+    <th>Komponentenmasse</th>
+    <th>Biegungsspannung</th>
+    <th>Bauteilhärte</th>
+    <th>Fügekraft</th>
+    </tr>
+    <tr>
+    <td>{{price}}</td>
+    <td>{{delivery}}</td>
+    <td>{{length}}</td>
+    <td>{{diameter}}</td>
+    <td>{{weight}}</td>
+    <td>{{bow}}</td>
+    <td>{{hardness}}</td>
+    <td>{{join}}</td>
+    </tr>
+
+    </table>
+
+    <h2>Approximierte interne Properties:</h2>
+    <table class="table">
+        <tr>
+            <th>Betriebsstunden</th>
+            <th>Werkzeugsstandzeit</th>
+            <th>Durchaufzeit</th>
+        </tr>
+        <tr>
+            <td>{{Betriebsstunden}}</td>
+            <td>{{Werkzeugstandzeit}}</td>
+            <td>{{Durchlaufzeit}}</td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+<script>
+var price = undefined
+var delivery = undefined
+var length = undefined
+var diameter = undefined
+var weight = undefined
+var bow = undefined
+var hardness = undefined
+var join = undefined
+
+
+function set_price(val) {
+    price = val;
+}
+
+function set_delivery(val) {
+    delivery = val;
+}
+
+function set_length(val) {
+    length = val;
+}
+
+function set_diameter(val) {
+    diameter = val;
+}
+
+function set_weight(val) {
+    weight = val;
+}
+
+function set_bow(val) {
+    bow = val;
+}
+
+function set_hardness(val) {
+    hardness = val;
+}
+
+function set_join(val) {
+    join = val;
+}
+
+function submit() {
+    window.location.href = `/internal?price=${price}&delivery=${delivery}&length=${length}&diameter=${diameter}&weight=${weight}&bow=${bow}&hardness=${hardness}&join=${join}`;
+}
+
+
+</script>
+
+<style>
+
+#accordion, #container {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+}
+
+.inputcontainer {
+    margin: 5px;
+}
+
+
+
+p {
+    margin-bottom: 0px;
+}
+
+disclaimer {
+    color: gray;
+    font-size: small;
+    margin-bottom: 20px;
+}
+
+
+
+</style>
+
+
+</body>
+</html>
