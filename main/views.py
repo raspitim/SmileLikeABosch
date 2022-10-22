@@ -23,7 +23,7 @@ def index(request):
 
 def internal(request, raw=False):
     if len(request.GET) == 0:
-        return render(request, "internal.html")
+        return render(request, "internal.html", {"error": "false"})
 
 
     input_names = ["Bauteilhärte", "Komponentenlänge", "Komponentendurchmesser", "Komponentenmasse", "Biegespannung", "Fügekraft", "Lieferzeit", "Produktpreis"]
