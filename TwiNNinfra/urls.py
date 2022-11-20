@@ -18,8 +18,9 @@ from django.urls import path
 from main.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", index),
+    path("", landing),
     path('give_values', get_given_properties),
     path("correlation", correlation),
-    path("internal", internal)
+    path("internal", internal),
+    path("configuration", index),
 ]

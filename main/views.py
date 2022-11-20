@@ -21,6 +21,10 @@ def index(request):
     return render(request, "page2.html")
 
 
+def landing(request):
+    return render(request, "landing.html")
+
+
 def internal(request, raw=False):
     if len(request.GET) == 0:
         return render(request, "internal.html", {"error": "false"})
